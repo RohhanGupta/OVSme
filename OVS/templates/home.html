@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
+    <title>Online Voting System</title>
+  </head>
+  <body>
+    
+    {% include 'header.html' %}
+
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        {% for msg in message %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{msg}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-6 col-md-12">
+          <div class="Instructions" style="margin-top: 20%; margin-left: 15%">
+            <h2>Instructions for voting</h2>
+            <ul class="">
+              <li>
+                Ensure that you have have uploaded your face data. If not then
+                you can <a href="{{url_for('views.uploadface')}}"> click here </a>
+              </li>
+              <li>
+                Ensure that there is a green tick at the top right of your
+                profile icon
+              </li>
+              <li>Ensure that you are sitting in well lit area</li>
+              <li>Try not to move during the process</li>
+              <li>Remove any obstacles that may block your face</li>
+              <li>
+                You will be given 3 minutes to go through the whole process. If
+                you take more time then you will be automaticallly logged out
+                for security reasons.
+              </li>
+              <li>Click on the <b>Start</b> button below to begin</li>
+              <a href="{{url_for('views.voting')}}"><button type="button" class="btn btn-primary mt-3">Start</button></a>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+          <img
+            style="width: 80%"
+            src="{{url_for('static', filename='images/Wavy_Tech-17_Single-04.jpg')}}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

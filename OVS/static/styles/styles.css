@@ -1,0 +1,41 @@
+.btn {
+  width: 100%;
+}
+.container {
+  padding: 10% 10% 10% 10%;
+}
+.Login {
+  color: #1e5bfa;
+}
+.Registration {
+  color: #1e5bfa;
+}
+
+.OVSlogo {
+  position: absolute;
+  top: -130px;
+  z-index: 1;
+}
+.Sign-para {
+  color: #1e5bfa;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 59px;
+}
+.Sign-sub {
+  color: #1e5bfa;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 29px;
+  color: black;
+}
+.voting-img {
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  padding-bottom: 10%;
+}
